@@ -1,26 +1,26 @@
-var readlineSync = require("readline-sync");
+const readlineSync = require("readline-sync");
 
-var score = 0;
+let score = 0;
 
-var topScores = [
+const topScores = [
   {
     name: "Player1",
-    score: 3,
+    score: 4,
   },
   {
     name: "Player2",
-    score: 2,
+    score: 3,
   },
 ]
 
  
- var userName = readlineSync.question("What's your name? ");
+const userName = readlineSync.question("What's your name? ");
 
   console.log("Welcome "+ userName + " Let's test your IPL knowledge with this short quiz.");
 
 
 function play(question, answer) {
-  var userAnswer = readlineSync.question(question);
+  const userAnswer = readlineSync.question(question);
 
   if (userAnswer.toUpperCase() === answer.toUpperCase()) { 
 
@@ -36,7 +36,7 @@ function play(question, answer) {
   console.log("-------------")
 }
 
-var questions = [{
+const questions = [{
   question: "Who is the highest run scorer in IPL 2020? ",
   answer: "KL Rahul"
 }, 
@@ -53,8 +53,8 @@ var questions = [{
   answer: "Kagiso rabada"
 }];
 
-   for (var i=0; i<questions.length; i++) {
-    var currentQuestion = questions[i];
+   for (let i=0; i<questions.length; i++) {
+    let currentQuestion = questions[i];
     play(currentQuestion.question, currentQuestion.answer)
   }
 
